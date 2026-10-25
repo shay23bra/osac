@@ -35,7 +35,9 @@ describe('VmGeneralStep', () => {
       },
     );
 
-    const diskImageSelect = await waitFor(() => getResourceSelectInput(/^Disk image/));
+    const diskImageSelect = await waitFor(() =>
+      getResourceSelectInput(/^Select the image reference/),
+    );
     await user.click(diskImageSelect);
 
     expect(screen.getByRole('option', { name: /fedora/ })).toBeInTheDocument();
@@ -71,6 +73,8 @@ describe('VmGeneralStep', () => {
       },
     );
 
-    await waitFor(() => expect(getResourceSelectInput(/^Disk image/)).toHaveValue('rhel'));
+    await waitFor(() =>
+      expect(getResourceSelectInput(/^Select the image reference/)).toHaveValue('rhel'),
+    );
   });
 });
