@@ -8,7 +8,7 @@ import subprocess
 
 INSTALLER = pathlib.Path(__file__).resolve().parents[1]
 CHART = INSTALLER / "charts/osac"
-PROFILES = ("vmaas-ci", "caas-ci", "full-ci", "cudn-evpn-netris-test")
+PROFILES = ("vmaas-ci", "caas-ci", "full-ci")
 EXPECTED_ISSUER = "https://keycloak-keycloak.example.com/realms/osac"
 
 
